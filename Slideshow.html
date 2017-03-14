@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Justice Leage Slideshow</title>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+
+	<style>
+	img {
+		max-width: 2000 auto;
+		max-height: 2000 auto;
+		image-rendering: auto;
+
+	}
+		
+	</style>
+</head>
+<body>
+
+	<div id="container"
+			<img src="deadpool/2.png" class="nyc_bridges"/>
+			<img src="deadpool/sweater1.jpg" class="nyc_bridges"/>
+			<img src="deadpool/no.jpg" class="nyc_bridges"/>
+			<img src="deadpool/shock.jpg" class="nyc_bridges"/>
+			<img src="deadpool/crowd.jpg" class="nyc_bridges"/>
+
+	</div>
+<!--classes are for groups, IDs is for individual groups -->
+<a class="back-button" onclick="plusDivs(-1)">&#10094;</a>
+<a class="forward-button" onclick="plusDivs(+1)">&#10095;</a>
+
+<script>
+	var slideIndex = 1;
+	showDivs(slideIndex);
+	//slideIndex=myCurrentSlide
+	function plusDivs(n) {
+		showDivs(slideIndex += n);
+	}
+
+	function showDivs(n) {
+		//when you declare more than 1 variable, it is an array.
+		//i is equal to first picture. there is no variable of 0 in this array.
+		var barnacle_boy;
+		var x = document.getElementsByClassName('nyc_bridges');
+		if (n > x.length) {slideIndex = 1}
+			if (n < 1) {slideIndex = x.length}
+				//everything in between, go up by 1
+				for (barnacle_boy = 0; barnacle_boy < x.length; barnacle_boy++) {
+					//display one image at a time 
+					x[barnacle_boy].style.display = 'none';
+				}
+				x[slideIndex-1].style.display = 'block';
+	}
+
+</script>
+</script>
+</body>
+</html>
