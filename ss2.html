@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="ss2.css">
+	<style type="text/css">
+
+	#container {
+			position: relative;
+			background: black;
+
+	#buttons {
+		background-color: black;
+		text-align: center;
+		color: white;
+		border: solid line white;
+		position: absolute;
+		height: 80px;
+		width: 80px;
+		margin-bottom: 3000px;
+	}
+
+
+	</style>
+</head>
+<body>
+		
+
+		<ul id="slideshow">
+		    <li class="slide showing"></li>
+		    <li class="slide"></li>
+		    <li class="slide"></li>
+		    <li class="slide"></li>
+		    <li class="slide"></li>
+		</ul>
+
+		<div id="container">
+			<div id="animate"></div>
+			<div id="animate"></div>
+
+		</div>
+
+		<div id="buttons">
+			<button onClick="Move()">Click Me</button>
+		</div>
+
+		<audio autoplay="autolay" controls="controls">
+  			<source src="shoostars.mp3" type="audio/mpeg">
+  
+		</audio>
+
+
+
+<script>
+	var slideshow = document.querySelectorAll('#slideshow .slide');
+	var currentSlide = 0;
+	var slideInterval = setInterval(nextSlide,2000);
+
+	function nextSlide() {
+    	slideshow[currentSlide].className = 'slide';
+    	currentSlide = (currentSlide+1)%slideshow.length;
+    	slideshow[currentSlide].className = 'slide showing';
+	}
+
+	function Move() {
+		var elem = document.getElementById('animate')
+		var pos = 0;
+		var id = setInterval(frame, 50);
+		function frame () {
+			if (pos == 300) {
+				clearInterval(id);
+			} else {
+				pos++;
+				elem.style.top = pos + 'px';
+				elem.style.left = pos + 'px';
+			}
+		}
+	}
+
+	
+//you have to add to different variables to make 2 different animations move//
+
+
+
+</script>
+
+</body>
+</html>
